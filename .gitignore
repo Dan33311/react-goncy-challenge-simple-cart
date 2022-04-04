@@ -1,3 +1,6 @@
+# Other projects files (working with)
+/src/api.jsx
+
 # Logs
 logs
 *.log
