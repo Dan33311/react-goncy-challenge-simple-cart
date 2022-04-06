@@ -11,7 +11,7 @@ function App() {
 
   const handleAdd = (product) => {
     const draft = new Map(cart) // creamos un nuevo cart que utiliza como base el cart viejo
-    const isInCart = cart.has(product.id)
+    const isInCart = draft.has(product.id)
 
     if(isInCart) {
       const item = cart.get(product.id)

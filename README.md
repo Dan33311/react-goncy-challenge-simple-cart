@@ -31,6 +31,7 @@ La Product Manager nos dijo que quieren usar esta misma lógica de carrito en ot
 
 ### commits guide
 
+* commit 6 - correct one line of code from the previous commit
 * commit 5 - use The Map object: `(Run <App2 />)`
   * Code refactor
   * No esta muy bueno mutar un objeto (por ejemplo queremos saber si un producto esta en el objeto, problema: si tenemos 100 productos tenemos que iterar mucho, problema 2: si queremos eliminar un objeto)
