@@ -1,5 +1,5 @@
 import { Button, Container, Flex, Image, Stack, Text } from '@chakra-ui/react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import api from './api'
 import './App.css'
 
@@ -8,6 +8,22 @@ function App() {
 
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState(() => new Map())
+
+  // to get count(products) and total(cost of total products in cart) 
+  const {total, count} = useMemo(
+    () => 
+      Array.from(cart.values()).reduce(
+        ({total, count}, item) => ({
+          total: total + item.count * item.product.price,
+          count: count + item.count
+        }),
+        {
+          total: 0,       // initial value
+          count: 0        // initial value
+        },
+      ),
+    [cart],
+  )
 
   const handleAdd = (product) => {
     const draft = new Map(cart) // creamos un nuevo cart que utiliza como base el cart viejo
@@ -78,7 +94,7 @@ function App() {
           })}
         </section>
         <Flex bottom={0} paddingBottom={4} margin="auto" position="sticky" width="fit-content">
-          <Button colorScheme="primary" size="lg" >3 productos (total: $12)</Button>
+          <Button colorScheme="primary" size="lg" >{count} productos (total: ${total})</Button>
         </Flex>
       </Container>
   )

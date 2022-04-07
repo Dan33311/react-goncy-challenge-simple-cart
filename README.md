@@ -31,6 +31,8 @@ La Product Manager nos dijo que quieren usar esta misma lógica de carrito en ot
 
 ### commits guide
 
+* commit 7 - get the total cost from products in cart
+  * useMemo, reducer
 * commit 6 - correct one line of code from the previous commit
 * commit 5 - use The Map object: `(Run <App2 />)`
   * Code refactor
@@ -39,7 +41,7 @@ La Product Manager nos dijo que quieren usar esta misma lógica de carrito en ot
   * Lazy Initializacion
   * Ahora si el contador de un producto llega a cero, el boton agregar volvera a aparecer
 * commit 4 - use cart logic:
-  In this commit the "Agregar" Button is working, like is required in the challenge:
+  * the "Agregar" Button is working, like is required in the challenge:
   <!-- Si tenemos algún elemento del producto en el carrito debemos cambiar el botón de "Agregar" por uno que tenga un botón de "-", la cantidad de productos que tenemos en el carrito y un botón de "+", clickear los botones correspondientes va a sumar o restar elementos del carrito. Si tenía un producto en el carrito y clickeo en "-" debe eliminar el producto del carrito. -->
 * Im using ChakraUI for styles
 * Pending `(How ignore a file correctly)`
